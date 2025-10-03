@@ -1,43 +1,99 @@
-# 🧠 JavaScript Hoisting Quiz
+# ⚡ JavaScript Hoisting & Temporal Dead Zone (var vs let vs const)
 
-This project is a **quiz-based experiment** to understand **Hoisting in JavaScript**.  
-The focus is on how `var`, `let`, `const`, and functions behave differently when hoisted.
+This project demonstrates **how variables behave differently** when declared with `var`, `let`, and `const` in JavaScript.  
+The examples are written in `index.js` and explained in detail for better understanding.
 
 ---
 
 ## 🎯 Project Goal
-- Explore **hoisting behavior** of variables and functions.
-- Understand **Temporal Dead Zone (TDZ)** for `let` and `const`.
-- Practice interview-style examples with real output.
+- Understand **hoisting** in JavaScript.
+- Learn about the **Temporal Dead Zone (TDZ)** with `let` and `const`.
+- Compare `var`, `let`, and `const` side by side.
+- Build a strong foundation for interviews and real-world coding.
 
 ---
 
 ## 📂 Project Structure
-``
-js-hoisting-quiz/
-│── index.js # Main program logic
-│── README.md # Documentation (description, learnings, interview Qs)
-``
+
+```
+js-hoisting-demo/
+│── index.js # Code examples (var, let, const side by side)
+│── README.md # Documentation (this file)
+```
+
 
 ---
 
-## 🚀 Features
-- Console-based **quiz game** with 2–3 questions.
-- Demonstrates:
-  - `var` vs `let` vs `const` hoisting.
-  - TDZ errors.
-  - Function declarations vs function expressions.
-- Logs outputs to show differences clearly.
+## 🧑‍💻 Code Overview
 
----
-
-## 🧑‍💻 Code Walkthrough
-
-### Example Snippet
+### 🔹 var Example
 ```js
-console.log(score); // undefined (because of var hoisting)
-var score = 0;
+varFunction();
 
-// Uncomment and try these:
-// let score = 0;   // ❌ ReferenceError (TDZ)
-// const score = 0; // ❌ ReferenceError (TDZ)
+function varFunction() {
+    console.log(varVariable); // Output: undefined
+    var varVariable = "I am a var variable";   
+    console.log(varVariable); // ✅ "I am a var variable"
+}
+
+## Why undefined?
+
+- var is hoisted and initialized with undefined.
+- The variable exists in memory before its declaration, so accessing it returns undefined.
+
+🔹 let Example
+
+  letFunction();
+
+  function letFunction() {
+      console.log(letVariable); // ❌ ReferenceError
+      let letVariable = "I am a let variable";
+      console.log(letVariable); // ✅ "I am a let variable"
+  }
+
+🔹 Why ReferenceError?
+
+- let is hoisted but not initialized.
+- It stays in the Temporal Dead Zone (TDZ) until its declaration line is executed.
+- Accessing it before that → ReferenceError.
+
+🔹 const Example
+
+constFunction();
+
+function constFunction() {
+    console.log(constVariable); // ❌ ReferenceError
+    const constVariable = "I am a const variable";
+    console.log(constVariable); // ✅ "I am a const variable"
+}
+
+🔹 Why ReferenceError?
+
+- const behaves like let: hoisted but uninitialized.
+- Also, it must be initialized at declaration.
+- Accessing it before initialization → ReferenceError.
+
+
+## 📊 Comparison Table
+
+| Keyword   | Hoisted? | Initialized?       | Before Initialization |
+| --------- | -------- | ------------------ | --------------------- |
+| **var**   | ✅ Yes    | ✅ `undefined`      | Prints `undefined`    |
+| **let**   | ✅ Yes    | ❌ (TDZ)            | ❌ ReferenceError      |
+| **const** | ✅ Yes    | ❌ (TDZ, must init) | ❌ ReferenceError      |
+
+
+---- var Example ----
+undefined
+I am a var variable
+
+---- let Example ----
+Error: Cannot access 'letVariable' before initialization
+I am a let variable
+
+---- const Example ----
+Error: Cannot access 'constVariable' before initialization
+I am a const variable
+
+
+
