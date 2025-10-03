@@ -97,3 +97,61 @@ I am a const variable
 
 
 
+# 📝 JavaScript Hoisting Quiz (CLI Project)
+
+A simple **Command Line Quiz App** built with Node.js to test your knowledge of **JavaScript Hoisting, var/let/const, and TDZ (Temporal Dead Zone).**
+
+---
+
+## 📂 Project Structure
+
+```
+js-hoisting-quiz/
+│── index.js # Main quiz logic
+│── question.js # Quiz questions
+│── README.md # Documentation
+
+```
+
+
+---
+
+## 🚀 How to Run the Project
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/js-hoisting-quiz.git
+cd js-hoisting-quiz
+
+2️⃣ Install Node.js
+
+Make sure you have Node.js installed.
+Check version:
+
+- node -v
+
+(Recommended: Node 14+)
+
+3️⃣ Run the Quiz
+
+- node index.js
+
+
+Q1: What will this print?
+console.log(a); var a = 10;
+1. 10
+2. undefined
+3. ReferenceError
+4. null
+Your answer (number): 2
+✅ Correct!
+
+Q2: What happens with let before initialization?
+1. undefined
+2. ReferenceError
+3. null
+4. NaN
+Your answer (number): 2
+✅ Correct!
+
+Quiz Over! Your score: 2/2
