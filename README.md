@@ -27,7 +27,9 @@ js-hoisting-demo/
 ## 🧑‍💻 Code Overview
 
 ### 🔹 var Example
-```js
+```
+js 
+
 varFunction();
 
 function varFunction() {
@@ -35,6 +37,7 @@ function varFunction() {
     var varVariable = "I am a var variable";   
     console.log(varVariable); // ✅ "I am a var variable"
 }
+```
 
 ## Why undefined?
 
@@ -42,7 +45,7 @@ function varFunction() {
 - The variable exists in memory before its declaration, so accessing it returns undefined.
 
 🔹 let Example
-
+```
   letFunction();
 
   function letFunction() {
@@ -50,6 +53,7 @@ function varFunction() {
       let letVariable = "I am a let variable";
       console.log(letVariable); // ✅ "I am a let variable"
   }
+```
 
 🔹 Why ReferenceError?
 
@@ -58,6 +62,7 @@ function varFunction() {
 - Accessing it before that → ReferenceError.
 
 🔹 const Example
+```
 
 constFunction();
 
@@ -66,6 +71,7 @@ function constFunction() {
     const constVariable = "I am a const variable";
     console.log(constVariable); // ✅ "I am a const variable"
 }
+```
 
 🔹 Why ReferenceError?
 
@@ -95,23 +101,20 @@ I am a let variable
 Error: Cannot access 'constVariable' before initialization
 I am a const variable
 
+---
 
 
-# 📝 JavaScript Hoisting Quiz (CLI Project)
+
+## 📝 JavaScript Hoisting Quiz (CLI Project)
 
 A simple **Command Line Quiz App** built with Node.js to test your knowledge of **JavaScript Hoisting, var/let/const, and TDZ (Temporal Dead Zone).**
 
----
-
 ## 📂 Project Structure
 
-```
 js-hoisting-quiz/
 │── index.js # Main quiz logic
 │── question.js # Quiz questions
 │── README.md # Documentation
-
-```
 
 
 ---
@@ -119,23 +122,25 @@ js-hoisting-quiz/
 ## 🚀 How to Run the Project
 
 ### 1️⃣ Clone the Repository
-```bash
+bash 
+```
 git clone https://github.com/your-username/js-hoisting-quiz.git
 cd js-hoisting-quiz
+```
 
 2️⃣ Install Node.js
 
 Make sure you have Node.js installed.
 Check version:
-
-- node -v
-
+```
+ node -v
+```
 (Recommended: Node 14+)
 
 3️⃣ Run the Quiz
-
-- node index.js
-
+```
+ node index.js
+```
 
 Q1: What will this print?
 console.log(a); var a = 10;
